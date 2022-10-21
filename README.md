@@ -28,7 +28,7 @@ from matplotlib import style
 from matplotlib import ticker as mticker
 from mplfinance.original_flavor import candlestick_ohlc
 
-style.use("tableau-colorblind10")
+plt.style.use("dark_background")
 
 
 def plot_graph(crypto):
@@ -47,11 +47,11 @@ def plot_graph(crypto):
     data["H-L"] = data.high - data.low
     data.dropna(inplace=True)
 
-    fig = plt.figure(figsize=(20, 10), facecolor="#f0f0f0")
+    fig = plt.figure(figsize=(20, 10), facecolor="#000000")
 
     # AXIS 1
     ax1 = plt.subplot2grid((12, 1), (0, 0), rowspan=2, colspan=1)
-    plt.title(crypto)
+    plt.title(f"{crypto} Chart", fontdict={"fontsize" :30})
     plt.ylabel('H-L')
 
     # AXIS 2
